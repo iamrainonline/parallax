@@ -6,7 +6,6 @@ let text = document.getElementById("text");
 let navbar = document.getElementById("navbar");
 let section1 = document.getElementById("section1");
 let section2 = document.getElementById("section2");
-// const bottom = 70;
 
 window.addEventListener("scroll", () => {
   var value = Math.floor(window.scrollY);
@@ -41,11 +40,18 @@ window.addEventListener("scroll", () => {
   } else {
     text.style.display = "block";
   }
-  if (value > 550) {
-    section2.classList.add("section-square-anim");
+  if (value > 450) {
+    section2.classList.add("section2-wrapper-full");
   } else {
-    section2.classList.remove("section-square-anim");
+    section2.classList.remove("section2-wrapper-full");
   }
+  setTimeout(() => {
+    if (value > 500) {
+      section2.classList.add("section2-wrapper-full-img");
+    } else {
+      section2.classList.remove("section2-wrapper-full-img");
+    }
+  }, 300);
 });
 
 const fullWidth = () => {
